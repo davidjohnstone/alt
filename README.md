@@ -50,6 +50,10 @@ There are all sorts of things that could be done, including:
 * A resizable "feeds box".
 * Loading the subscriptions list and the initial items simultaneously to make the site load faster.
 
+## About me
+
+I'm [David Johnstone](http://davidjohnstone.net). I keep myself busy building [Cycling Analytics](www.cyclinganalytics.com/), a website for cyclists (which means I'm not going out of my way to spend lots of time on Alt). I can be found on Twitter as [@cyclist_dave](https://twitter.com/cyclist_dave), or emailed at [david@davidjohnstone.net](mailto:david@davidjohnstone.net).
+
 ## License
 
 The MIT License.
