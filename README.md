@@ -2,7 +2,7 @@
 
 Alt is a clean and simple alternative interface to NewsBlur by [David Johnstone](http://davidjohnstone.net).
 
-Alt is hosted online at [altfeedreader.com](http://www.altfeedreader.com/). The [introductory blog post](http://davidjohnstone.net/blog/2013/06/alt-is-a-simpler-and-prettier-interface-to-newsblur) has more information about Alt.
+Alt is hosted online at [altfeedreader.com](http://www.altfeedreader.com/). The [introductory blog post](http://davidjohnstone.net/blog/2013/06/alt-is-a-simpler-and-prettier-interface-to-newsblur) has more information.
 
 ## Getting it running
 
@@ -14,7 +14,7 @@ The server can then be started with:
 
     python run.py
 
-The site will then be available on `127.0.0.1:5001`.
+The site will then be available on `http://127.0.0.1:5001/`.
 
 ## Some notes about the code
 
@@ -39,7 +39,16 @@ At a high level, this is what happens when you load the page:
   * The current queue is cleared.
   * The first page of the feed is retrieved with the current settings (for sorting and showing).
 
-Most if it isn't too complicated, although there is a bit of magic involved in deciding whether or not to resize the box that items are shown in because of what they contain. That is, the boxes are normally a certain width, but if they contain large images, they are expanded to show them in their full glory (without going larger than the window). Alternatively, if they contain images that are slighty smaller than the box, the box might be resized to more naturally frame the image, depending on the amount of text and the width of the image[s].
+Most of it isn't too complicated, although there is a bit of magic involved in deciding whether or not to resize the box that items are shown in because of what they contain. That is, the boxes are normally a certain width, but if they contain large images, they are expanded to show them in their full glory (without going larger than the window). Alternatively, if they contain images that are slightly smaller than the box, the box might be resized to more naturally frame the image, depending on the amount of text and the width of the image[s].
+
+## What's next?
+
+There are all sorts of things that could be done, including:
+
+* Feed and folder management (adding and deleting feeds and folders, and moving them around).
+* A better "headlines" mode, which would look better and be more information dense.
+* A resizable "feeds box".
+* Loading the subscriptions list and the initial items simultaneously to make the site load faster.
 
 ## License
 
