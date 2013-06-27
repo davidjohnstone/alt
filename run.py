@@ -1,25 +1,15 @@
 from urlparse import urljoin
 
 from flask import Flask, render_template, jsonify, request, g, redirect, session, flash
-from flask.ext.assets import Environment, Bundle
 import requests
 from requests.exceptions import ConnectionError
 
 import config
 
 app = Flask(__name__)
-assets = Environment(app)
 app.config['MAX_CONTENT_LENGTH'] = 4 * 1024 * 1024
 
 app.secret_key = config.secret_key
-
-assets.debug = False # Remember to have this as False, and run the code before deploying to build the JS.
-#assets.debug = True
-assets.auto_build = True
-assets.manifest = 'file'
-assets.config['CLOSURE_COMPRESSOR_OPTIMIZATION'] = 'SIMPLE_OPTIMIZATIONS'
-assets.register('js_all', Bundle('reader.js', 'shared.js', filters='closure_js', output='script/%(version)s.js'))
-assets.register('css_all', Bundle('style.css', filters='cssmin', output='style/%(version)s.css'))
 
 @app.before_request
 def before_request():

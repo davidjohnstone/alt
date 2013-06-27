@@ -11,9 +11,7 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 	<link href="/static/icon.png" rel="shortcut icon">
-	{% assets "css_all" %}
-	<link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
-	{% endassets %}
+	<link href="/static/style.css" rel="stylesheet" type="text/css">
 	{% block headcssjs %}{% endblock %}
 </head>
 <body>
@@ -29,11 +27,6 @@
 	</div>
 	<div id="footer">&copy; 2013 <a href="http://davidjohnstone.net">David Johnstone</a></div>
 
-{% block basejs %}
-	{% assets "js_all" %}
-		<script src="{{ ASSET_URL }}"></script>
-	{% endassets %}
-{% endblock %}
 {% block javascript %}{% endblock %}
 </body>
 </html>
