@@ -2,6 +2,8 @@
 
 Alt is a clean and simple alternative interface to NewsBlur by [David Johnstone](http://davidjohnstone.net).
 
+A copy of Alt is hosted online at [altfeedreader.com](http://www.altfeedreader.com/). The [introductory blog post](http://davidjohnstone.net/blog/2013/06/alt-is-a-simpler-and-prettier-interface-to-newsblur) has more information about Alt.
+
 ## Getting it running
 
 The backend is a simple Flask (Python) server. It requires `Flask`, `Flask-Assets`, `closure`, `cssmin` and `requests`, which can be installed with:
