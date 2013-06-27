@@ -43,10 +43,12 @@ $('#counter').click(function(e) {
 	}
 });
 /*
+Historical information: when this was first made, it was designed to work for a backend that I created, and it worked differently to what the NewsBlur API supports. What follows are some notes on how this worked, which aren't useful now except to explain why the code is how it is today, which is sometimes a bit odd because of these roots.
+
 concepts:
 	active queue
 		where the visible items come from
-		either the user's queue or the feed of a single website
+		either the user's queue, the feed of a single website, or the feed of a group of websites (folder)
 		the user's queue may be outdated, and the new one stored locally too
 	user's state
 		a store of all a user's unread items, by feed
@@ -69,6 +71,10 @@ every couple of minutes download the queue:
 	if there are new items:
 		add them to the user's state
 		update the appropriate visible counts
+
+---
+
+Today, the main difference is that it's a lot dumber. At the core of the feed fetching, it sets up some settings (which feeds, or all of them, the order by which to get them, and whether to get all or just unread) and then only remembers which page it is up to as it gets more items.
 */
 
 var queue = [];
