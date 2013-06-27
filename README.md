@@ -1,6 +1,6 @@
 # Alt
 
-Alt is a clean and simple alternative interface to NewsBlur by [David Johnstone](http://davidjohnstone.net).
+Alt is a clean and simple alternative interface to NewsBlur.
 
 Alt is hosted online at [altfeedreader.com](http://www.altfeedreader.com/). The [introductory blog post](http://davidjohnstone.net/blog/2013/06/alt-is-a-simpler-and-prettier-interface-to-newsblur) has more information.
 
@@ -26,7 +26,7 @@ This doesn't use a database, so the only state the server has to worry about is 
 
 ### Client side
 
-This was originally intended to be a complete feed reader system, so the JavaScript was structured to work well with the backend I was developing. However, the NewsBlur API is conceptually different which means the code isn't nearly as beautiful as it could be — NewsBlur API support mostly been shoehorned onto the structure that was already there. Add to that a "just get it working" attitude, and you get what we have today.
+This was originally intended to be a complete feed reader system, so the JavaScript was structured to work well with the backend I was developing. However, the NewsBlur API is conceptually different which means the code isn't nearly as beautiful as it could be — NewsBlur API support mostly been shoehorned onto the structure that was already there. Add to that a "just get it working" attitude, and you get what we have today (although that might make it sound worse than it actually is).
 
 At a high level, this is what happens when you load the page:
 
@@ -49,6 +49,7 @@ There are all sorts of things that could be done, including:
 * A better "headlines" mode, which would look better and be more information dense.
 * A resizable "feeds box".
 * Loading the subscriptions list and the initial items simultaneously to make the site load faster.
+* Improvements for working on mobile devices.
 
 ## About me
 
@@ -56,4 +57,4 @@ I'm [David Johnstone](http://davidjohnstone.net). I keep myself busy building [C
 
 ## License
 
-The MIT License.
+MIT
