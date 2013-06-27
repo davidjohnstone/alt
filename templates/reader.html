@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block headcssjs %}
+<style>
+</style>
+<script>
+</script>
+{% endblock %}
+{% block headerbuttons %}
+{% endblock %}
+{% block body %}
+		
+	<div id="main" style="position: relative">
+		<div id="header">
+			<span id="page-title"><img src="/static/icon.png">Alt</span>
+			<span class="header-button label-menu"><span class="unread-all-label">Unread</span> <i class="icon-chevron-down"></i>
+				<div class="dropdown">
+					<div class="show-unread">Show unread</div>
+					<div class="show-all">Show all</div>
+				</div>
+			</span>
+			<span class="header-button label-menu" id="show-account-details"><span class="newest-oldest-label">Newest</span> <i class="icon-chevron-down"></i>
+				<div class="dropdown">
+					<div class="show-newest-first">Newest first</div>
+					<div class="show-oldest-first">Oldest first</div>
+				</div>
+			</span>
+			<span class="header-button label-menu" id="show-account-details"><span class="full-headlines-label">Full</span> <i class="icon-chevron-down"></i>
+				<div class="dropdown">
+					<div class="show-full-stories">Full stories</div>
+					<div class="show-headlines">Headlines</div>
+				</div>
+			</span>
+		</div>
+		<div id="items"></div>
+		<div id="main-message-holder">
+			<div id="main-message"></div>
+		</div>
+		<div id="last-box"></div>
+	</div>
+	<div id="controls">
+		<div id="counter">0</div>
+		<div id="bottom-right">
+			<div class="request-error" title="Something went wrong. You probably want to refresh the page." style="display: none; color: rgb(219, 74, 74)"><i class="icon-spinner icon-spin"></i></div>
+			<div class="active-requests" title="Working&hellip;" style="display: none"><i class="icon-spinner icon-spin"></i></div>
+			<div id="back-to-top" class="clickable" title="Back to top"><i class="icon-chevron-up"></i></div>
+		</div>
+		<div id="feeds-box">
+			{#<div class="show-add-button close-button"><i class="icon-plus"></i><span>add</span></div>#}
+			<div class="close-button"><i class="icon-remove"></i></div>
+			{#<div id="add-subscription-box">
+				<!--<input type="text" id="add-subscription-input" placeholder="Enter website or feed URL&hellip;">-->
+				<input type="text" id="add-subscription-input" placeholder="Coming soon&hellip;" disabled=true>
+				<input type="button" id="add-subscription-button" value="Add" disabled=true>
+			</div>
+			<div id="status-message"></div>#}
+			<div id="subscriptions"></div>
+			<div style="width: 100%; height: 80px"></div>
+		</div>
+	</div>
+	<div id="top-right">
+		<div id="show-contact" class="clickable" title="Contact"><i class="icon-envelope-alt"></i></div>
+		<a class="clickable" href="/logout" title="Log out"><i class="icon-signout"></i></a>
+	</div>
+	<div id="contact-box" class="box">
+		<div class="close-button"><i class="icon-remove"></i></div>
+		<div>Hi! I'm David, and I made this site. If you want to get in contact with me for any reason, send me an email at <a href="mailto:david@davidjohnstone.net">david@davidjohnstone.net</a>.</div>
+	</div>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		<div id="flash" class="box">
+			<div class="close-button"><i class="icon-remove"></i></div>
+			<ul>
+				{% for category, message in messages %}
+				<li><i class="{{ category }}"></i> {{ message|safe }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+	{% endwith %}
+
+<script>
+var pageMode = '{{ 'try' if trysite else 'full' }}';
+
+(function() {
+var imgWidthCss = $('<style>').appendTo($('head'));
+var genImgWidthCss = function(pageWidth, feedsBoxVisible) {
+	var padding = feedsBoxVisible ? 20 : 50;
+	return '<style type="text/css">.item img { max-width: ' + (pageWidth - (80 + 2 * padding)) + 'px; } .item { max-width: ' + (pageWidth - 2 * padding) + 'px; }</style>';
+};
+var resize = function() {
+	imgWidthCss.html(genImgWidthCss($('#main').width(), $('#feeds-box').data('visible')));
+};
+resize();
+$(window).resize(resize);
+})();
+
+</script>
+{% endblock %}
+{% block javascript %}
+{% endblock %}

@@ -1,0 +1,624 @@
+html, body {
+	height: 100%;
+}
+body {
+	font-family: sans-serif;
+	font-size: 14px;
+	line-height: 150%;
+	background-color: #f5f5f5;
+	background-image: url(/static/furley_bg.png);
+	background-size: auto;
+	background-repeat: repeat repeat;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, input, textarea {
+	font-family: sans-serif;
+}
+a {
+	color: rgb(0, 107, 241);
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:visited {
+	color: rgb(66, 0, 184);
+}
+a:visited:hover {
+	color: rgb(66, 0, 184);
+	text-decoration: underline;
+}
+#wrapper {
+	min-height: 100%;
+	margin-bottom: -100px;
+}
+#bottom {
+	height: 100px;
+	clear: both;
+}
+#footer {
+	text-align: center;
+	margin-top: 72px;
+	color: #bbb;
+	font-size: 10px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	word-spacing: 3px;
+}
+#footer a {
+	color: #bbb;
+}
+#footer a:hover {
+	color: #999;
+}
+#header {
+	position: absolute;
+	top: 6px;
+	left: 50%;
+	width: 760px;
+	margin-left: -380px;
+	color: #ccc;
+	font-size: 14px;
+	font-weight: 700;
+}
+#page-title {
+	color: #999;
+	margin-right: 20px;
+}
+#page-title img {
+	vertical-align: -2px;
+	margin-right: 2px;
+}
+#header-create-account {
+	margin-right: 30px;
+}
+#header-log-in {
+}
+.header-button {
+	margin-left: 20px;
+}
+.header-button i {
+	margin-left: 2px;
+}
+.header-button:hover {
+	color: #666;
+	cursor: pointer;
+}
+#header .label-menu {
+	position: relative;
+	padding-bottom: 5px;
+}
+#header .label:hover .label-menu, #header .label-menu.with-dropdown {
+	visibility: visible;
+}
+#header .label-menu:hover {
+}
+#header .label-menu:hover .dropdown, #header .label-menu:active .dropdown {
+	display: block;
+}
+#header .dropdown {
+	display: none;
+	position: absolute;
+	z-index: 20;
+	left: 50%;
+	margin-left: -55px;
+	width: 110px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	font-weight: 400;
+}
+#header .dropdown i {
+	margin-right: 7px;
+	display: inline-block;
+	width: 15px;
+	text-align: right;
+}
+#header .dropdown div {
+	padding: 2px 10px;
+}
+#header .dropdown div:hover {
+	color: #000;
+	background-color: rgba(210, 210, 210, 0.5);
+}
+#flash {
+	position: fixed;
+	top: 20px;
+	display: block;
+	bottom: auto;
+	width: 500px;
+	left: 50%;
+	margin: 0 auto;
+	list-style-type: none;
+	margin-left: -250px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #333;
+}
+#flash ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.item {
+	width: 760px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+.item:first-of-type, .item.headline:first-of-type {
+	padding-top: 40px;
+}
+.item-box {
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	padding: 10px 40px 26px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+.item.active .item-box {
+	border: 1px solid rgba(0, 0, 0, 0.16);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+}
+.top-row {
+	font-size: 18px;
+	font-size: 16px;
+	color: #999;
+	padding: 10px 0;
+	position: relative;
+}
+.top-row .feed-name {
+	font-weight: 700;
+}
+.top-row .right {
+	position: absolute;
+	right: 0;
+	font-size: 16px;
+	font-size: 14px;
+}
+.top-row .read-status {
+	visibility: hidden;
+	margin-right: 5px;
+	padding: 2px 8px;
+	cursor: pointer;
+}
+.top-row .read-status.read, .top-row .read-status.unread {
+	visibility: visible;
+}
+.top-row .read-status:hover {
+	color: #333;
+}
+.item p, .item li, .item blockquote {
+	max-width: 700px;
+}
+.item h2 a {
+	color: #000;
+	text-decoration: none;
+	line-height: 24px;
+}
+.item h2 a:hover, .item h2 a:focus {
+	text-decoration: underline;
+}
+.item img {
+	height: auto;
+	vertical-align: middle;
+}
+.item img.block-image {
+	display: block;
+}
+a img {
+	border: none;
+}
+img[height="1"][width="1"] {
+	display: none;
+}
+.item-content > img {
+	margin: 14px 0;
+}
+.item-content input {
+	width: auto !important;
+}
+.item hr {
+	border: 0px solid #eee;
+	border-bottom: 3px solid #eee;
+	width: 60%;
+	margin: 30px auto;
+
+}
+.item pre, .item code {
+	font-family: Consolas, monospace;
+	line-height: 16px;
+	font-size: 12px;
+	white-space: pre-wrap;
+}
+.item del {
+	display: none;
+}
+.item ins {
+	text-decoration: none;
+}
+.item-content > *:last-child {
+	margin-bottom: 14px;
+}
+.item.headline {
+	padding: 5px 0;
+}
+.item.headline .item-box {
+	padding: 7px 15px;
+	position: relative;
+}
+.item.headline h2 {
+	font-size: 14px;
+	line-height: 18px;
+	margin: 0;
+}
+.item.headline .item-content {
+	display: none;
+}
+.item.headline .top-row {
+	font-size: 10px;
+	padding: 0;
+	line-height: 14px;
+}
+.item.headline .time {
+	font-size: 10px;
+}
+.item.headline .cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: pointer;
+}
+.item.headline .cover:hover {
+	background-color: rgba(0, 0, 0, 0.03);
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.06));
+	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.06));
+	background: linear-gradient(top, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.06));
+}
+#main-message-holder {
+	padding-top: 100px;
+	min-height: 25px;
+}
+#main-message {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
+	font-style: italic;
+	color: #999;
+}
+#main-message i {
+	margin-right: 4px;
+}
+#controls {
+	position: fixed;
+	left: 2px;
+	top: 4px;
+}
+#counter {
+	font-size: 14px;
+	font-weight: 700;
+	color: #999;
+	cursor: pointer;
+	padding: 2px 10px;
+}
+#counter:hover {
+	color: #666;
+}
+#top-right {
+	position: absolute;
+	top: 4px;
+	right: 0;
+}
+#logout:hover {
+	color: #666;
+}
+#bottom-right {
+	position: fixed;
+	bottom: 0;
+	right: 4px;
+}
+#bottom-right div, #top-right .clickable {
+	padding: 3px 5px 2px;
+	cursor: pointer;
+	display: inline-block;
+}
+#bottom-right div {
+	color: #ccc;
+}
+#top-right .clickable {
+	color: #999;
+}
+#bottom-right .clickable:hover, #bottom-right .clickable:focus, #top-right .clickable:hover, #top-right .clickable:focus {
+	color: #666;
+	text-decoration: none;
+}
+.box {
+	display: none;
+	background-color: #fff;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	z-index: 10;
+	position: fixed;
+	top: 30px;
+	left: 12px;
+	overflow: auto;
+	max-height: -webkit-calc(100% - 90px);
+	max-height: calc(100% - 90px);
+	border: 1px solid #ccc;
+}
+#feeds-box {
+	display: none;
+	background-color: #fff;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+	padding: 25px 10px 10px;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	line-height: 200%;
+	border-right: 1px solid #ccc;
+	width: 240px;
+	/*width: 350px;*/ /* TODO Realise when this extends past the bottom, then add bottom and width, adjusted based on the width of the scrollbar http://www.alexandre-gomes.com/?p=115 http://stackoverflow.com/questions/986937/how-can-i-get-the-browsers-scrollbar-sizes */
+}
+#feeds-box .label {
+	padding: 0 25px 0 8px;
+	cursor: pointer;
+	position: relative;
+	white-space: nowrap;
+}
+#feeds-box .label:hover {
+	background-color: rgba(240, 240, 240, 0.5);
+}
+#feeds-box .label.has-unread {
+	font-weight: 700;
+}
+#feeds-box .folder-label {
+	font-weight: 700;
+}
+#feeds-box .folder {
+	margin-left: 24px;
+}
+#feeds-box .icon-folder {
+    display: inline-block;
+	color: #999;
+	position: absolute;
+	height: 100%;
+	line-height: 200%;
+	padding: 0 4px 0 10px;
+	left: 0;
+}
+#feeds-box .icon-folder-open:hover:before {
+	content: "\f07b";
+}
+#feeds-box .icon-folder-close:hover:before {
+	content: "\f07c";
+}
+#feeds-box .title {
+	max-width: 190px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: bottom;
+}
+#feeds-box .folder-title {
+	margin-left: 24px;
+}
+#feeds-box .root-folder-title {
+	margin-left: 0;
+}
+#feeds-box .folder .title {
+	max-width: 166px;
+}
+#feeds-box .folder .folder .title {
+	max-width: 142px;
+}
+#feeds-box .folder .folder .folder .title {
+	max-width: 118px;
+}
+#feeds-box .folder .folder .folder .folder  .title {
+	max-width: 94px;
+}
+#feeds-box .folder .folder .folder .folder .folder .title {
+	max-width: 70px;
+}
+#feeds-box .label-menu {
+	position: absolute;
+	right: 0;
+	color: #ccc;
+	visibility: hidden;
+	padding: 0 5px;
+	display: inline-block;
+}
+#feeds-box .label:hover .label-menu, #feeds-box .label-menu.with-dropdown {
+	visibility: visible;
+}
+#feeds-box .label-menu:hover {
+	color: #666;
+}
+#feeds-box .label-menu:hover .dropdown, #feeds-box .label-menu:active .dropdown {
+	display: block;
+}
+#feeds-box .dropdown {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	background-color: #fff;
+	border: 1px solid #eee;
+	font-weight: 400;
+}
+#feeds-box .dropdown i {
+	margin-right: 7px;
+	display: inline-block;
+	width: 15px;
+	text-align: right;
+}
+#feeds-box .dropdown div {
+	padding: 2px 10px;
+}
+#feeds-box .dropdown div:hover {
+	color: #000;
+	background-color: rgba(240, 240, 240, 0.5);
+}
+.close-button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 14px;
+	color: #ccc;
+	padding: 3px 5px;
+	cursor: pointer;
+	line-height: 100%
+}
+.close-button:hover {
+	color: #999;
+}
+.show-add-button {
+	left: 5px;
+	right: auto;
+}
+.show-add-button span {
+	margin-left: 4px;
+	vertical-align: top;
+	font-size: 12px;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+#add-subscription-box {
+	width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-right: 72px;
+	position: relative;
+	margin-bottom: 10px;
+}
+#add-subscription-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 65px;
+}
+#status-message {
+	font-size: 11px;
+	font-style: italic;
+	margin-top: -10px;
+	display: none;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#status-message i {
+	margin-right: 5px;
+}
+.favicon {
+	vertical-align: middle;
+	margin-right: 8px;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+}
+.heading {
+	font-weight: 700;
+	color: #666;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+	padding: 5px 8px;
+	margin: 0;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-size: 14px;
+	border: 1px solid #ccc;
+}
+label {
+	margin-top: 5px;
+	display: inline-block;
+	color: #999;
+	font-size: 12px;
+}
+input[type="button"], input[type="submit"] {
+	font-size: 14px;
+	font-weight: 700;
+	padding: 5px 12px;
+	/*background-color: #f5f5f5;
+	border: 1px solid #ccc;*/
+	color: #666;
+	margin: 0;
+	border: 1px solid #ccc;
+	background-color: #e3e3e3;
+	background: -webkit-linear-gradient(top, #eee, #ddd);
+	background: -moz-linear-gradient(top, #eee, #ddd);
+	background: linear-gradient(top, #eee, #ddd);
+}
+input[type="button"]:hover, input[type="button"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+	/*background-color: #eee;
+	border: 1px solid #999;*/
+	color: #333;
+	border: 1px solid #bbb;
+	background-color: #c3c3c3;
+	background: -webkit-linear-gradient(top, #ddd, #ccc);
+	background: -moz-linear-gradient(top, #ddd, #ccc);
+	background: linear-gradient(top, #ddd, #ccc);
+}
+input[type="button"][disabled="disabled"] {
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	color: #999;
+}
+input[type="button"][disabled="disabled"]:hover {
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	color: #999;
+}
+#create-account-button {
+	margin: 15px 0;
+}
+.status-message {
+	font-size: 11px;
+	font-style: italic;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.status-message i {
+	margin-right: 5px;
+}
+#contact-box {
+	left: auto;
+	bottom: auto;
+	right: 12px;
+	width: 300px;
+}
+.heading i {
+	width: 16px;
+	display: inline-block;
+	margin-right: 5px;
+	text-align: center;
+}
+.box input[type="button"], .box input[type="submit"] {
+	margin: 15px 0;
+}
+#account-details-box .heading {
+	margin-top: 6px;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	cursor: pointer;
+}
+#account-details-box .heading:hover, #account-details-box .heading:focus {
+	color: #999;
+}
+#account-details-box .heading.expanded:hover i:before, #account-details-box .heading.expanded:focus i:before {
+	content: "\f054";
+}
+#account-details-box .heading.collapsed:hover i:before, #account-details-box .heading.collapsed:focus i:before {
+	content: "\f078";
+}

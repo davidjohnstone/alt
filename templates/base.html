@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	{% if title %}
+		<title>{{ title }} — Alt</title>
+	{% else %}
+		<title>Alt — A feed reader</title>
+	{% endif %}
+	<meta name="description" content="Read all your favourite blogs and websites in one place with Alt.">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<link href="/static/icon.png" rel="shortcut icon">
+	{% assets "css_all" %}
+	<link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+	{% endassets %}
+	{% block headcssjs %}{% endblock %}
+</head>
+<body>
+	<div id="wrapper">
+		{% block headerbuttons %}
+			<div id="header">
+				<span id="page-title"><img src="/static/icon.png">Alt</span>
+			</div>
+		{% endblock %}
+		{#<div id="header"><span id="page-title"><img src="/static/icon.png">Alt</span>{% if g.user %}<span class="header-button" id="show-account-details">Account</span>{% else %}<span id="header-create-account" class="header-button create-account-link">Create account</span> <span id="header-log-in" class="header-button">Log in</span>{% endif %}</div>#}
+		{% block body %}{% endblock %}
+		<div id="bottom"></div>
+	</div>
+	<div id="footer">&copy; 2013 <a href="http://davidjohnstone.net">David Johnstone</a></div>
+
+{% block basejs %}
+	{% assets "js_all" %}
+		<script src="{{ ASSET_URL }}"></script>
+	{% endassets %}
+{% endblock %}
+{% block javascript %}{% endblock %}
+</body>
+</html>

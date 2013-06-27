@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block basejs %}
+{% endblock %}
+{% block headcssjs %}
+<style>
+#header {
+	left: 10px;
+	margin-left: 0;
+}
+.intro-text {
+	margin: 20px 0 50px;
+	font-size: 20px;
+	max-width: 100% !important;
+	text-align: center;
+}
+.intro-login {
+	width: 628px;
+	background-color: #f0f0f0;
+	border: 1px solid #ddd;
+	margin: 0 auto;
+	background: -webkit-linear-gradient(top, #f3f3f3, #eee);
+	background: -webkit-linear-gradient(top, #f3f3f3, #eee);
+	background: -moz-linear-gradient(top, #f3f3f3, #eee);
+	background: linear-gradient(top, #f3f3f3, #eee);
+}
+.intro-login input {
+	width: 250px !important;
+	padding: 8px 12px;
+	margin: 10px 0 10px 12px;
+	border: 1px solid #ddd;
+}
+.intro-login input[type="submit"] {
+	width: 80px !important;
+	border: 1px solid #ccc;
+}
+.intro-login input[type="submit"]:hover, .intro-login input[type="submit"]:focus {
+	border: 1px solid #bbb;
+}
+.login-error {
+	font-size: 12px;
+	text-align: center;
+	margin: 10px auto 0;
+	font-weight: 700;
+	color: rgb(219, 74, 74);
+}
+.login-explanation {
+	text-align: center;
+	margin: 30px auto 0;
+}
+li {
+	margin-bottom: 6px;
+}
+ul ul li {
+	margin-bottom: 0;
+}
+h3 {
+	margin-bottom: -10px;
+}
+blockquote {
+	font-size: 13px;
+}
+</style>
+<script>
+
+var pageWidth = $(window).width();
+var genImgWidthCss = function(pageWidth) {
+	return '<style type="text/css">.item { max-width: ' + (pageWidth - 100) + 'px; } .item img { max-width: ' + (pageWidth - 180) + 'px; }</style>';
+};
+var imgWidthCss = $(genImgWidthCss(pageWidth)).appendTo($('head'));
+$(window).resize(function() {
+	pageWidth = $(window).width();
+	imgWidthCss.html(genImgWidthCss(pageWidth));
+});
+
+</script>
+{% endblock %}
+{% block javascript %}
+<script>
+</script>
+{% endblock %}
+{% block body %}
+
+<div id="items">
+	<div class="item" style="width: 1040px;">
+		<div class="top-row">
+		</div>
+		<div class="item-box" style="padding: 40px 40px 30px">
+			<div class="item-content">
+				<p class="intro-text">Alt is an alternative interface to <a href="http://www.newsblur.com/" target="_blank">NewsBlur</a> that is designed to be clean and simple to use.</p>
+				<div class="intro-login">
+					<form method="post" action="/login"><input type="text" name="email" placeholder="NewsBlur email or username" value="{{ failed_email if failed_login else '' }}"><input type="password" name="password" placeholder="NewsBlur password"><input type="submit" value="Log in"></form>
+				</div>
+				{% if failed_login %}
+					<p class="login-error">Invalid email/username or password.</p>
+				{% endif %}
+				<p class="login-explanation">Or, <a href="/try">try this out</a> without logging in. Don't have a NewsBlur account? <a href="http://www.newsblur.com/" target="_blank">Create one now</a>.</p>
+			</div>
+		</div>
+	</div>
+	<div class="item">
+		<div class="top-row">
+		</div>
+		<div class="item-box">
+			<h2>Designed for people</h2>
+			<div class="item-content">
+				<blockquote>
+					<p>“Like all magnificent things, it's very simple.” ― Natalie Babbitt, <em>Tuck Everlasting</em></p>
+				</blockquote>
+				<p>Alt doesn't try to do anything fancy. It lets you read the content from the feeds that you're subscribed to, and that's about it. There isn't much to explain, but there are a few things worth mentioning:</p>
+				<ul>
+					<li>Navigation using <kbd>j</kbd>/<kbd>k</kbd> (for down/up) is supported.</li>
+					<li>The following options are available to control how feeds are viewed:
+						<ul>
+							<li>Show only unread items, or show them all.</li>
+							<li>Sort by either newest or oldest first.</li>
+							<li>Show full content of items, or only the title.</li>
+						</ul>
+					</li>
+					<li>There is a counter at the top left corner &mdash; this shows how many unread items you have. Clicking on this brings up a list of feeds you're subscribed to.</li>
+					<li>Inside the list of feeds, clicking on the label of a folder shows items for all feeds in the folder, while clicking on the icon expands the folder.</li>
+					<li>Items are marked as read when you start reading them (or, when the top of the item is near the top of the browser window). An eye icon appears at the top, which can be clicked on to keep it unread.</li>
+					<li>The width of items is sometimes adjusted if the item contains images (or videos) that would look better in a different sized box.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="item">
+		<div class="top-row">
+		</div>
+		<div class="item-box">
+			<h2>A few more things</h2>
+			<div class="item-content">
+				<h3>Source code</h3>
+				<p>The source code for this is available on <a href="https://github.com/davidjohnstone/alt" target="_blank">GitHub</a>.</p>
+				<h3>Credits</h3>
+				<p>There are also a few credits worth mentioning:</p>
+				<ul>
+					<li><a href="http://www.newsblur.com/" target="_blank">NewsBlur</a>, the excellent feed reader that this builds upon.</li>
+					<li><a href="http://subtlepatterns.com/" target="_blank">Subtle Patterns</a>, for the subtle pattern that is our background.</li>
+					<li><a href="http://fortawesome.github.com/Font-Awesome/" target="_blank">Font Awesome</a>, for an excellent set of icons that are occasionally used here.</li>
+					<li>Google Reader, for shutting down and making sites like this possible.</li>
+				</ul>
+				<h3>About me</h3>
+				<p>Hello. I'm David. I'm a software developer based in Melbourne who doesn't want the closure of Google Reader to spoil his feed reading habit. I can be contacted by email at <a href="mailto:david@davidjohnstone.net">david@davidjohnstone.net</a>. When I'm not building feed readers, I'm making a website for cyclists, <a href="http://www.cyclinganalytics.com/" target="_blank">Cycling Analytics</a>.
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
