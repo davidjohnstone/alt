@@ -18,6 +18,15 @@ There are some big advantages to this approach:
 * It means, provided you already have a NewsBlur account, you can try it out without having to set up a new account (hands up, those who have more accounts with feed readers than you can count on one hand).
 * It also means it's not the end of the world if this project is disappears, since NewsBlur will still be there, and all your data will be unaffected.
 
+## Main features
+
+Alt isn't yet a fully featured replacement interface for NewsBlur. Here are some of the things it currently does:
+
+* Infinite scrolling — as you scroll down, more items appear.
+* View items from all feeds, all feeds in a folder, or a single feed.
+* Options to show unread items or all of them, sort by newest or oldest first, and show full items or only headlines. These preferences are saved between visits.
+* A hideable feeds list, for a cleaner feed reading experience.
+
 ## Getting it running
 
 The backend is a simple Flask (Python) application. It only requires `Flask` and `requests`, which can be installed with:
