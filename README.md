@@ -4,6 +4,20 @@ Alt is a clean and simple alternative interface to NewsBlur.
 
 Alt is hosted online at [altfeedreader.com](http://www.altfeedreader.com/). The [introductory blog post](http://davidjohnstone.net/blog/2013/06/alt-is-a-simpler-and-prettier-interface-to-newsblur) has more information.
 
+![](http://www.altfeedreader.com/static/front-1.png)
+
+## What is this?
+
+[NewsBlur](http://www.newsblur.com/) exposes an [API](http://www.newsblur.com/api) that allows one to get their feeds, get items from their feeds and do everything else that NewsBlur supports. Rather than creating another feed fetching and parsing backend, Alt makes use of a NewsBlur account so that NewsBlur's servers do all the work of making the data ready to display.
+
+Therefore, Alt is an alternative interface to a NewsBlur account. It displays the same data that NewsBlur does, and items marked as read in Alt are marked as read in NewsBlur, but it's designed to be cleaner and simpler. I might be biased, but I prefer using this.
+
+There are some big advantages to this approach:
+
+* It makes this project much simpler, as there are a lot of moving parts in a system that has to fetch and parse feeds for any number of users (Alt doesn't even use a database).
+* It means, provided you already have a NewsBlur account, you can try it out without having to set up a new account (hands up, those who have more accounts with feed readers than you can count on one hand).
+* It also means it's not the end of the world if this project is disappears, since NewsBlur will still be there, and all your data will be unaffected.
+
 ## Getting it running
 
 The backend is a simple Flask (Python) application. It only requires `Flask` and `requests`, which can be installed with:
