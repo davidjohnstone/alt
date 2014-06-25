@@ -2,9 +2,9 @@
 
 Alt is a clean and simple alternative interface to NewsBlur.
 
-Alt is hosted online at [altfeedreader.com](http://www.altfeedreader.com/). The [introductory blog post](http://davidjohnstone.net/blog/2013/06/alt-is-a-simpler-and-prettier-interface-to-newsblur) has more information.
+Alt is hosted online at [alt.herokuapp.com](https://alt.herokuapp.com/). The [introductory blog post](http://davidjohnstone.net/blog/2013/06/alt-is-a-simpler-and-prettier-interface-to-newsblur) has more information.
 
-![](http://www.altfeedreader.com/static/front-1.png)
+![](https://alt.herokuapp.com/static/front-1.png)
 
 ## What is this?
 
